@@ -11,14 +11,14 @@
 
 	<header>
 		<div>
-			<form action="" method="POST">
-				<label for="username"></label>
+			<form action="../Model/login.php" method="POST">
 				<input type="text" name="username" id="username" placeholder="Usuari" required>
-				<label for="password"></label>
 				<input type="password" name="password" id="password" placeholder="Contrassenya" required>
-				<input type="submit" value="Iniciar sessió">
-				<input type="submit" value="Registrar-se">
+				<input type="submit"  value="Iniciar sessió">
 			</form>
+			<form action="Model/register.php" method="GET">
+                <input type="submit" value="Registrar-se">
+            </form>
 		</div>
 	</header>
 

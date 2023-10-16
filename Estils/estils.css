@@ -25,6 +25,14 @@ header {
     align-items: center;
     overflow: hidden;
 }
+header input[type="text"],
+header input[type="password"] {
+    padding: 10px;
+    margin: 5px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    width: 180px; 
+}
 header button {
     background-color: #4CAF50; 
     color: white; 
@@ -35,14 +43,14 @@ header button {
 }
 
 header button:hover {
-    background-color: #45a049; /* Cambia el color de fondo al pasar sobre el botón */
+    background-color: #45a049; 
 }
 
 .contenidor {
     width: 90%;
     max-width: 1000px;
     margin: auto;
-    padding-top: 20px; /* Añade un relleno superior en lugar de margen superior */
+    padding-top: 20px; 
 }
 
 h1 {
@@ -50,7 +58,7 @@ h1 {
     text-align: center;
     font-family: 'Open Sans Condensed', sans-serif;
     color: #1b4a81;
-    font-weight: bold; /* Cambia "black" a "bold" para una fuente más negra */
+    font-weight: bold; 
 }
 
 .contenidor .articles {

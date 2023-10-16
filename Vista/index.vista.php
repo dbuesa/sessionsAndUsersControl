@@ -11,6 +11,10 @@
 
 	<header>
 		<div>
+			<label for="username"></label>
+			<input type="text" name="username" id="username" placeholder="Usuari">
+			<label for="password"></label>
+			<input type="password" name="password" id="password" placeholder="Contrassenya">
 			<button>Iniciar sessió</button>
 			<button>Registrar-se</button>
 		</div>

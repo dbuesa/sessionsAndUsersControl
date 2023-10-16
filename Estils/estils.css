@@ -25,24 +25,23 @@ header {
     align-items: center;
     overflow: hidden;
 }
-header input[type="text"],
-header input[type="password"] {
-    padding: 10px;
-    margin: 5px; 
-    border: 1px solid #ccc; 
-    border-radius: 4px; 
-    width: 180px; 
-}
-header button {
-    background-color: #4CAF50; 
+header input[type="submit"]{
+	background-color: #4CAF50; 
     color: white; 
     border: none; 
 	margin-right: 20px;
     padding: 10px 20px;
     cursor: pointer; 
 }
-
-header button:hover {
+header input[type="text"],
+header input[type="password"] {
+    padding: 10px;
+    margin: 5px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px;
+    width: 180px; 
+}
+header input[type="submit"]:hover {
     background-color: #45a049; 
 }
 

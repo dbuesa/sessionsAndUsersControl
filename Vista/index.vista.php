@@ -11,14 +11,17 @@
 
 	<header>
 		<div>
-			<label for="username"></label>
-			<input type="text" name="username" id="username" placeholder="Usuari">
-			<label for="password"></label>
-			<input type="password" name="password" id="password" placeholder="Contrassenya">
-			<button>Iniciar sessió</button>
-			<button>Registrar-se</button>
+			<form action="" method="POST">
+				<label for="username"></label>
+				<input type="text" name="username" id="username" placeholder="Usuari" required>
+				<label for="password"></label>
+				<input type="password" name="password" id="password" placeholder="Contrassenya" required>
+				<input type="submit" value="Iniciar sessió">
+				<input type="submit" value="Registrar-se">
+			</form>
 		</div>
-	</header> 
+	</header>
+
 
 	<div class="contenidor">
 		<h1>Articles</h1>

@@ -1,7 +1,7 @@
 <?php 
 //David Buesa
 
-require "Model/model.php";
+require "Model/modelArticles.php";
 
 $articlesPerPagina = intval(articles());
 

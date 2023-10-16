@@ -12,7 +12,7 @@ function articles(){
         $_SESSION['articlesPerPagina'] = $_GET['opcions']; 
     } else {
        
-        $_SESSION['articlesPerPagina'] = isset($_SESSION['articlesPerPagina']) ? $_SESSION['articlesPerPagina'] : 5;
+        $_SESSION['articlesPerPagina'] = isset($_SESSION['articlesPerPagina']) ? $_SESSION['articlesPerPagina'] : 50;
     }
     return $_SESSION['articlesPerPagina'];
 }
@@ -28,6 +28,19 @@ function llistarArticles($limit, $offset) {
 
     $stmt = $conn->prepare("SELECT * FROM articles LIMIT ? OFFSET ?");
     $stmt->execute([$limit, $offset]);
+    $articles = $stmt->fetchAll(PDO::FETCH_OBJ);
+
+    return $articles;
+}
+
+/**
+ * Funció que retorna tots els articles
+ * @return articles tots els articles
+ */
+function llistarTotsArticles(){
+    require "connexio.php";
+
+    $stmt = $conn->query("SELECT * FROM articles");
     $articles = $stmt->fetchAll(PDO::FETCH_OBJ);
 
     return $articles;

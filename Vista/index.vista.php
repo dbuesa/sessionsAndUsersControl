@@ -8,6 +8,14 @@
 	<title>Paginació</title>
 </head>
 <body>
+
+	<header>
+		<div>
+			<button>Iniciar sessió</button>
+			<button>Registrar-se</button>
+		</div>
+	</header> 
+
 	<div class="contenidor">
 		<h1>Articles</h1>
 		<section class="articles"> <!--aqui guardem els articles-->

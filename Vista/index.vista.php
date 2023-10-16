@@ -16,7 +16,7 @@
 				<input type="password" name="password" id="password" placeholder="Contrassenya" required>
 				<input type="submit"  value="Iniciar sessió">
 			</form>
-			<form action="Model/register.php" method="GET">
+			<form action="Controlador/controlarRegistre.php" method="GET">
                 <input type="submit" value="Registrar-se">
             </form>
 		</div>

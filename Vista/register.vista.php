@@ -6,18 +6,19 @@
     <title>Sign up</title>
     <link rel="stylesheet" href="../Estils/estilsRegistre.css">
 </head>
-<body>
-    <div id="login-box">
-    <div class="left">
-        <h1>Registre</h1>
-        
-        <input type="text" name="username" placeholder="Usuari" />
-        <input type="password" name="password" placeholder="Contrassenya" />
-        <input type="password" name="password2" placeholder="Repeteix la contrassenya" />
-        
-        <input type="submit" name="signup_submit" value="Registrar-se" />
-    </div>
-    
+<body>  
+    <form action="../Model/register.php" method="POST">
+        <div id="login-box">
+        <div class="left">
+            <h1>Registre</h1>
+            <br><br>
+            <input type="text" name="username" placeholder="Usuari"  required/>
+            <input type="password" name="password" placeholder="Contrassenya" required/>
+            <input type="password" name="password2" placeholder="Repeteix la contrassenya" required />
+            
+            <input type="submit" name="signup_submit" value="Registrar-se" />   
+        </div>
+    </form> 
     <div class="right">
         <span class="loginwith">Sign in with<br />Xarxa social</span>
         

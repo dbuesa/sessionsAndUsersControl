@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="../Estils/estilsRegistre.css">
 </head>
 <body>  
-    <form action="../Model/register.php" method="POST">
+    <form action="../Controlador/controlarRegistre.php" method="POST">
         <div id="login-box">
         <div class="left">
             <h1>Registre</h1>
-            <br><br>
+            <br><br><br>
             <input type="text" name="username" placeholder="Usuari"  required/>
             <input type="password" name="password" placeholder="Contrassenya" required/>
             <input type="password" name="password2" placeholder="Repeteix la contrassenya" required />
@@ -20,6 +20,8 @@
         </div>
     </form> 
     <div class="right">
+        <a href="../index.php">Tornar</a>
+
         <span class="loginwith">Sign in with<br />Xarxa social</span>
         
         <button class="social-signin facebook">Registrar-se via facebook</button>
@@ -28,5 +30,14 @@
     </div>
     <div class="or">O</div>
     </div>
+    <?php
+        if (!empty($errors)) {
+            echo '<ul>';
+            foreach ($errors as $error) {
+                echo '<li>' . $error . '</li>';
+            }
+            echo '</ul>';
+        }
+    ?>
 </body>
 </html>

@@ -17,6 +17,4 @@ function afegirUsuari($usuari, $contrasenya){
 }
 
 
-include "../Vista/register.vista.php";
-
 ?>

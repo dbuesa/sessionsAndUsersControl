@@ -13,7 +13,6 @@ if(!empty($_POST["username"]) && !empty($_POST["password"]) && !empty($_POST["pa
 
 
 function comprovarContrassenya($contr1, $contr2){
-    echo 'hola';
     if($contr1 == $contr2){
         return true;
     }else{
@@ -23,7 +22,6 @@ function comprovarContrassenya($contr1, $contr2){
 }
 
 function comprovarUsuari($user){
-    echo 'adeu';
     if (strlen($user) < 4) {
         $errors[] = "L'usuari ha de tenir més de 4 caràcters";
         return false;

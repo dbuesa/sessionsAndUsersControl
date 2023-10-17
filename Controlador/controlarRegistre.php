@@ -30,8 +30,22 @@ function comprovarUsuari($user){
     }
 }
 
+function existeixUsuari($user){
+    require_once '../Model/connexio.php';
+    $stmt = $conn->prepare("SELECT * FROM usuaris WHERE username = ?");
+    $stmt->bindParam(1, $user);
+    $stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    if($result){
+        $errors[] = "L'usuari ja existeix";
+        return false;
+    }else{
+        return true;
+    }
+}
 
-if (isset($_POST['signup_submit']) && comprovarUsuari($user) && comprovarContrassenya($contr1, $contr2)) {
+
+if (isset($_POST['signup_submit']) && existeixUsuari($user) && comprovarUsuari($user) && comprovarContrassenya($contr1, $contr2)) {
     require_once '../Model/register.php';
     $contrassenya = hash('sha512', $contr1);
     afegirUsuari($user, $contrassenya);    

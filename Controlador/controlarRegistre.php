@@ -4,9 +4,10 @@
 $errors = array();
 
 if(!empty($_POST["username"]) && !empty($_POST["password"]) && !empty($_POST["password2"])){
-    $user = htmlspecialchars($_POST["username"]);
-    $contr1 = htmlspecialchars($_POST["password"]);
-    $contr2 = htmlspecialchars($_POST["password2"]);
+    require_once '../Model/utils.php';
+    $user = netejarData($_POST["username"]);
+    $contr1 = netejarData($_POST["password"]);
+    $contr2 = netejarData($_POST["password2"]);
 }
 
 

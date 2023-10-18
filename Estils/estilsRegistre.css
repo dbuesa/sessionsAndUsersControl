@@ -12,16 +12,36 @@ body {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
 }
+.inferior a {
+  display: block;
+  text-decoration: none;
+  color: #000000;
+  margin-bottom: 3px;
+}
+.inferior a:hover {
+  color: #3282b8;
+}
+
 
 #login-box {
   position: relative;
   margin: 5% auto;
   width: 600px;
-  height: 480px;
+  height: 400px;
   background: #FFF;
   border-radius: 2px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
+
+.error-box {
+  margin: 5% auto;
+  width: 600px;
+  background: #FFF;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  padding: 20px; 
+}
+
 
 .left {
   position: absolute;

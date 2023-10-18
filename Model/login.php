@@ -1,6 +1,7 @@
 <?php
 //David Buesa
 
+include '../Vista/login.vista.php';
 
 if(!empty($_POST["username"]) && !empty($_POST["password"])){
     $user = htmlspecialchars($_POST["username"]);

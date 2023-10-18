@@ -18,19 +18,13 @@
             
     
             <input type="submit" name="signup_submit" value="Registrar-se" />   
-            <?php
-                if (!empty($errors)) {
-                    echo '<br>';
-                    echo '<ul>';
-                    foreach ($errors as $error) {
-                        echo '<li>' .  $error . "</li>";
-                    }
-                    echo '</ul>';
-                }
-            ?>
+            <br><br>
+
+            <div class="inferior">
+                    <a href="../Controlador/controlarLogin.php">Tens compte? Entra</a>
+            </div>
         </div>
         <div>
-    
     </div>
     </form> 
     <div class="right">
@@ -43,6 +37,16 @@
     </div>
     <div class="or">O</div>
     </div>
-
+    <div class="error-box">
+        <?php
+            if (!empty($errors)) {
+                echo '<ul>';
+                foreach ($errors as $error) {
+                    echo '<li>' .  $error . "</li>";
+                }
+                echo '</ul>';
+            }
+        ?>
+    </div>
 </body>
 </html>

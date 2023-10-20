@@ -1,6 +1,12 @@
 <?php 
 //David Buesa
 
+/**
+ * afegirUsuari - Funció que afegeix un usuari a la base de dades
+ * @param  mixed $usuari
+ * @param  mixed $contrasenya
+ * @return void
+ */
 function afegirUsuari($usuari, $contrasenya){
     require 'connexio.php';
 

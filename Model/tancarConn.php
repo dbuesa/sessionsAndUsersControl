@@ -1,8 +1,11 @@
 <?php
 
+
 session_start();
 session_destroy();
 
-header("Location: ../index.php");
+echo '<script>alert("Fins aviat!");</script>';
+
+header("refresh:0.01, url=../index.php");
 
 ?>

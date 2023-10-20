@@ -10,6 +10,12 @@ if(isset($_POST["Entrar"])){
     loginUsuari($user, $contrassenya);
 }
 
+/**
+ * loginUsuari - Funció que comprova si l'usuari existeix i si la contrassenya és correcta
+ * @param  mixed $user 
+ * @param  mixed $contrassenya
+ * @return void
+ */
 function loginUsuari($user, $contrassenya){
 require 'connexio.php';
 try{

@@ -11,6 +11,13 @@ if(!empty($_POST["username"]) && !empty($_POST["password"]) && !empty($_POST["pa
 }
 
 
+/**
+ * comprovarContrassenya - Funció que comprova si les contrassenyes coincideixen
+ *
+ * @param  mixed $contr1 
+ * @param  mixed $contr2
+ * @return boolean true si les contrassenyes coincideixen, false si no
+ */
 function comprovarContrassenya($contr1, $contr2){
     if($contr1 == $contr2){
         return true;
@@ -19,6 +26,12 @@ function comprovarContrassenya($contr1, $contr2){
         return false;
     }
 }
+/**
+ * validarContrassenya - Funció que comprova si la contrassenya és vàlida
+ *
+ * @param  mixed $contr1
+ * @return boolean true si la contrassenya és vàlida, false si no
+ */
 function validarContrassenya($contr1){
     $reg = "/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/";
     if (preg_match($reg, $contr1)) {
@@ -29,6 +42,12 @@ function validarContrassenya($contr1){
 }
 
 
+/**
+ * comprovarUsuari - Funció que comprova si l'usuari és vàlid
+ *
+ * @param  mixed $user
+ * @return boolean true si l'usuari és vàlid, false si no
+ */
 function comprovarUsuari($user){
     if (strlen($user) < 5) {
         
@@ -39,6 +58,12 @@ function comprovarUsuari($user){
 }
 
 
+/**
+ * existeixUsuari - Funció que comprova si l'usuari ja existeix
+ *
+ * @param  mixed $user
+ * @return boolean true si l'usuari no existeix, false si existeix
+ */
 function existeixUsuari($user){
     require_once '../Model/connexio.php';
     $stmt = $conn->prepare("SELECT * FROM usuaris WHERE username = ?");

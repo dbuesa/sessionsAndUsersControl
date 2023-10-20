@@ -21,7 +21,7 @@
             <br><br>
 
             <div class="inferior">
-                    <a href="../Controlador/controlarLogin.php">Tens compte? Entra</a>
+                <a href="../Model/login.php">Tens compte? Entra</a>
             </div>
         </div>
         <div>

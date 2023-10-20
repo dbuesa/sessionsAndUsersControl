@@ -30,6 +30,17 @@
                         <input type="password" placeholder="Contraseña" name="password" required>
                         
                         <button type="submit" title="Entrar" name="Entrar">Entra</button>
+                        <div>  
+                            <?php
+                                if (!empty($errors)) {
+                                    echo '<ul>';
+                                    foreach ($errors as $error) {
+                                        echo '<li>' .  $error . "</li>";
+                                    }
+                                    echo '</ul>';
+                                }
+                            ?>
+                        </div>
                     </form>
                     <div class="pie-form">
                         <a href="../Controlador/controlarRegistre.php">¿No tens compte? Registrat</a>
@@ -40,6 +51,5 @@
                 </div>
             </div>
         </div>
-            
     </body>
 </html>

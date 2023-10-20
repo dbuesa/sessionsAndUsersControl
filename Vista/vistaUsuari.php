@@ -10,7 +10,7 @@
 <body>
 	<header>
 		<div>
-			<form action="../Model/login.php" method="GET">
+			<form action="Model/tancarConn.php" >
 				<input type="submit" value="Tancar sessió">
 
 			</form>
@@ -23,7 +23,6 @@
 		<section class="articles"> <!--aqui guardem els articles-->
 			<?php echo $list ?>
 		</section>
-
 
 		<form method="get" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
 			<select name="opcions" id="opcions" onchange="this.form.submit()">

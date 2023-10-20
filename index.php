@@ -1,6 +1,9 @@
 <?php 
 //David Buesa
 
+session_start();
+
+if(!isset($_SESSION['username'])){
     require "Model/articles.php";
 
     $articlesPerPagina = intval(articles());
@@ -30,6 +33,9 @@
     
     include 'Vista/index.vista.php';
 
+}else{
+    include 'Vista/vistaUsuari.php';
+}
     
 
 ?>

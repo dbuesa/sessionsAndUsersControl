@@ -1,7 +1,9 @@
 <?php
 //David Buesa
 
-session_start();
+if(isset($_SESSION['username'])){
+    session_start();
+}
 
 /**
  * Funció que retorna el nombre d'articles per pàgina

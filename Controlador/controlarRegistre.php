@@ -95,9 +95,10 @@ if (isset($_POST['signup_submit'])) {
         require_once '../Model/register.php';
         $contassenya = password_hash($contr1, PASSWORD_DEFAULT);
         afegirUsuari($user, $contassenya);
-        header("Location: ../index.php");
-    }
-}
+        echo '<script>alert("Usuari registrat! Ja pots iniciar sessió!");</script>';
+        header("refresh:0.01, url=../Model/login.php");
+    }}
+
 
 include "../Vista/register.vista.php";
 ?>

@@ -34,6 +34,12 @@ if(!isset($_SESSION['username'])){
     include 'Vista/index.vista.php';
 
 }else{
+    require "Model/articlesUsuari.php";
+
+
+
+
+    
     include 'Vista/vistaUsuari.php';
 }
     

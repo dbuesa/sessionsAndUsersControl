@@ -11,10 +11,10 @@
 
 	<header>
 		<div>
-			<form action="Model/login.php" method="GET">
+			<form action="Model/login.php">
 				<input type="submit"  value="Iniciar sessió">
 			</form>
-			<form action="Controlador/controlarRegistre.php" method="GET">
+			<form action="Controlador/controlarRegistre.php">
                 <input type="submit" name="signup_login" value="Registrar-se">
             </form>
 		</div>

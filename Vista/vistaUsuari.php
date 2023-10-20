@@ -8,17 +8,12 @@
 	<title>Paginació</title>
 </head>
 <body>
-
 	<header>
 		<div>
-			<form action="../Model/login.php" method="POST">
-				<input type="text" name="username" id="username" placeholder="Usuari" required>
-				<input type="password" name="password" id="password" placeholder="Contrassenya" required>
-				<input type="submit"  value="Iniciar sessió">
+			<form action="../Model/login.php" method="GET">
+				<input type="submit" value="Tancar sessió">
+
 			</form>
-			<form action="Controlador/controlarRegistre.php" method="GET">
-                <input type="submit" name="signup_login" value="Registrar-se">
-            </form>
 		</div>
 	</header>
 

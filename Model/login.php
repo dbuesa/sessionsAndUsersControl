@@ -4,8 +4,8 @@
 include '../Vista/login.vista.php';
 
 if(!empty($_POST["username"]) && !empty($_POST["password"])){
-    $user = htmlspecialchars($_POST["username"]);
-    $contrassenya = htmlspecialchars($_POST["password"]);
+    $user = netejarData($_POST["username"]);
+    $contrassenya = netejarData($_POST["password"]);
 }
 
 
@@ -29,5 +29,8 @@ try{
 }catch(PDOException $e){
     echo "Error: " . $e->getMessage();
 }
+
+
+
 
 ?>

@@ -11,7 +11,7 @@
 
 	<header>
 		<div>
-			<form action="Controlador/controlarLogin.php" method="GET">
+			<form action="Model/login.php" method="GET">
 				<input type="submit"  value="Iniciar sessió">
 			</form>
 			<form action="Controlador/controlarRegistre.php" method="GET">

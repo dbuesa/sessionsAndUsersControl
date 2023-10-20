@@ -3,10 +3,7 @@
     
     <head>
         
-        <meta charset="utf-8">
-        
-        <title> Formulario de Acceso </title>    
-        
+        <meta charset="utf-8">        
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet"> 
@@ -15,6 +12,7 @@
         <link rel="stylesheet" href="../Estils/login.css">
         <style type="text/css"></style>
         <script type="text/javascript"></script>
+        <title>Formulari d'accés</title>
         
     </head>
     
@@ -26,7 +24,7 @@
                     <div class="titulo">
                         Benvingut
                     </div>
-                    <form id="loginform">
+                    <form id="loginform" method="POST" action="../Model/login.php">
                         <input type="text" name="user" placeholder="Usuario" required>
                         
                         <input type="password" placeholder="Contraseña" name="password" required>

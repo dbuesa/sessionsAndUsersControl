@@ -20,13 +20,14 @@ function comprovarContrassenya($contr1, $contr2){
     }
 }
 function validarContrassenya($contr1){
-    if (strlen($contr1) < 6) {
-        
-        return false;
-    }else{
+    $reg = "/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/";
+    if (preg_match($reg, $contr1)) {
         return true;
+    }else{
+        return false;
     }
 }
+
 
 function comprovarUsuari($user){
     if (strlen($user) < 5) {
@@ -36,6 +37,7 @@ function comprovarUsuari($user){
         return true;
     }
 }
+
 
 function existeixUsuari($user){
     require_once '../Model/connexio.php';
@@ -55,7 +57,7 @@ if (isset($_POST['signup_submit'])) {
         $errors[] = "Les contrassenyes no coincideixen";
     }
     if (!validarContrassenya($contr1)) {
-        $errors[] = "La contrassenya ha de tenir més de 6 caràcters";
+        $errors[] = "La contrassenya ha de tenir almenys 8 caràcters, una majúscula, una minúscula, un número i un caràcter especial";
     }
     if (!comprovarUsuari($user)) {
         $errors[] = "L'usuari ha de tenir més de 5 caràcters";

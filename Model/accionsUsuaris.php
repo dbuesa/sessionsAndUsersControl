@@ -20,7 +20,7 @@ function crearArticle($descripcion, $usuari_id){
 }
 
 /**
- * eliminarArticle - Elimina un article de la base de dades
+ * eliminarArticle - Elimina un article de la base de dades 
  *
  * @param  mixed $article_id 
  * @param  mixed $usuari_id
@@ -43,7 +43,7 @@ function eliminarArticle($article_id, $usuari_id){
 
 
 /**
- * mostrarArticle - Mostra un article de la base de dades
+ * mostrarArticle - Mostra un article de la base de dades 
  *
  * @param  mixed $article_id
  * @param  mixed $usuari_id
@@ -60,7 +60,7 @@ function mostrarArticle($article_id, $usuari_id, ){
 }
 
 /**
- * editarArticle - Edita un article de la base de dades
+ * editarArticle - Edita un article de la base de dades 
  *
  * @param  mixed $article_id
  * @param  mixed $usuari_id
@@ -79,5 +79,16 @@ function editarArticle($article_id, $usuari_id, $descripcio){
 
 }
 
+/**
+ * prompt - Funció que crea un prompt per a demanar dades a l'usuari i retorna la resposta del prompt.
+ *
+ * @param  mixed $prompt_msg
+ * @return $answer retorna la resposta del prompt
+ */
+function prompt($prompt_msg){
+    echo("<script type='text/javascript'> var answer = prompt('".$prompt_msg."'); </script>");
 
+    $answer = "<script type='text/javascript'> document.write(answer); </script>";
+    return($answer);
+}
 ?>

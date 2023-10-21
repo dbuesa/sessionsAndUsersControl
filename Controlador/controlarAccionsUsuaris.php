@@ -79,7 +79,6 @@ if (isset($_POST['editar'])) {
 
 
 
-
     
 if (isset($_POST['eliminar'])) {
     include "../Vista/eliminarArticle.vista.php";
@@ -95,6 +94,7 @@ if (isset($_POST['eliminar'])) {
         $usuari_id = $_SESSION['username'];
         $usuari_id = obtenirUsuariId($usuari_id)->usuari_id;
 
+        
         require_once "../Model/accionsUsuaris.php";
         if(eliminarArticle($article_id, $usuari_id)){
             echo '<script>alert("Article eliminat!");</script>';
@@ -104,8 +104,5 @@ if (isset($_POST['eliminar'])) {
            include "../Vista/eliminarArticle.vista.php";
         }
     }
-    
-
 } 
-
 ?>

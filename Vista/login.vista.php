@@ -25,7 +25,7 @@
                         Benvingut
                     </div>
                     <form id="loginform" method="POST" action="../Model/login.php">
-                        <input type="text" name="user" placeholder="Usuario" required>
+                        <input type="text" name="user" placeholder="Usuario" value="<?php echo isset($_POST['user']) ? $_POST['user'] : ''; ?>" required/>
                         
                         <input type="password" placeholder="Contraseña" name="password" required>
                         

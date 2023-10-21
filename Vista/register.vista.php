@@ -12,7 +12,7 @@
         <div class="left">
             <h1>Registre</h1>
             <br>
-            <input type="text" name="username" placeholder="Usuari"  required/>
+            <input type="text" name="username" placeholder="Usuari" value="<?php echo isset($_POST['username']) ? $_POST['username'] : ''; ?>" required/>
             <input type="password" name="password" placeholder="Contrassenya" required/>
             <input type="password" name="password2" placeholder="Repeteix la contrassenya" required />
             

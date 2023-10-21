@@ -22,16 +22,32 @@
             <div class="button-container">
                 <a href="../index.php">Tornar</a>
             </div>
+			<div>
+				
+			</div>
 	</div>
     <br>
     <div class="button-container">
-			<form action="../Controlador/controlarAccions.php" method="POST">
+		<form action="../Controlador/controlarAccionsUsuaris.php" method="POST">
+			<div>
+				<p style="color:red;">Introdueix l'ID de l'article que desitjes eliminar: </p><br>
+			</div>
 			<div class="txa">
-				<textarea name="textarea" id="textarea" cols="30" rows="10"></textarea>
+				<input type="number" id="id" name="id" min="1" >
 			</div>
 			<br>
-				<input class="green-button" type="submit" name="afegirArticle" value="Eliminar article">
-			</form>
-		</div>
+			<?php
+				if (!empty($errors)) {
+					echo '<ul>';
+					foreach ($errors as $error) {
+						echo '<li>' .  $error . "</li>";
+					}
+					echo '</ul>';
+				}
+			?>
+			<br>
+			<input class="green-button" type="submit" name="eliminarArticle" value="Eliminar article">
+		</form>
+	</div>
 </body>
 </html>

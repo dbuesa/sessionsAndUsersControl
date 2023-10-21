@@ -14,9 +14,11 @@ if (isset($_POST['crear'])){
     } else {
         include "../Model/utils.php";
         include "../Model/articlesUsuari.php";
+
         $descripcio = netejarData($_POST['textarea']);
         $usuari_id = $_SESSION['username']; 
         $usuari_id = obtenirUsuariId($usuari_id)->usuari_id;
+        
         require_once "../Model/accionsUsuaris.php";
         crearArticle($descripcio, $usuari_id);
     }
@@ -25,6 +27,23 @@ if (isset($_POST['crear'])){
     
 } else if (isset($_POST['eliminar'])) {
     include "../Vista/eliminarArticle.vista.php";
+} else if (isset($_POST['eliminarArticle'])) {
+    if(empty($_POST['id'])){
+        $errors[] = "Has d'introduir";
+        include "../Vista/eliminarArticle.vista.php";
+    }else {
+        include "../Model/utils.php";
+        include "../Model/articlesUsuari.php";
+
+        $article_id = netejarData($_POST['id']);
+        $usuari_id = $_SESSION['username'];
+        $usuari_id = obtenirUsuariId($usuari_id)->usuari_id;
+
+        require_once "../Model/accionsUsuaris.php";
+        eliminarArticle($article_id, $usuari_id);
+
+    }
+    
 
 } else {
    

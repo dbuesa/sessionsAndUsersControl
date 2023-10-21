@@ -29,7 +29,7 @@ try{
             $_SESSION['username'] = $user;
             header("Location: ../index.php");
         }else{
-            $errors[] = "La contrassenya no és correcta";
+            $errors[] = "La contrasenya no és correcta";
         }
     }else{
         $errors[] = "L'usuari no existeix";

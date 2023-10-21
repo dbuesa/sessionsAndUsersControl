@@ -13,8 +13,8 @@
             <h1>Registre</h1>
             <br>
             <input type="text" name="username" placeholder="Usuari" value="<?php echo isset($_POST['username']) ? $_POST['username'] : ''; ?>" required/>
-            <input type="password" name="password" placeholder="Contrassenya" required/>
-            <input type="password" name="password2" placeholder="Repeteix la contrassenya" required />
+            <input type="password" name="password" placeholder="Contrasenya" required/>
+            <input type="password" name="password2" placeholder="Repeteix la contrasenya" required />
             
     
             <input type="submit" name="signup_submit" value="Registrar-se" />   

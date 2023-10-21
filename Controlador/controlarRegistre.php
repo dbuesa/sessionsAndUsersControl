@@ -12,13 +12,13 @@ if(!empty($_POST["username"]) && !empty($_POST["password"]) && !empty($_POST["pa
 
 
 /**
- * comprovarContrassenya - Funció que comprova si les contrassenyes coincideixen
+ * comprovarContrasenya - Funció que comprova si les contrasenyes coincideixen
  *
  * @param  mixed $contr1 
  * @param  mixed $contr2
  * @return boolean true si les contrassenyes coincideixen, false si no
  */
-function comprovarContrassenya($contr1, $contr2){
+function comprovarContrasenya($contr1, $contr2){
     if($contr1 == $contr2){
         return true;
     }else{
@@ -27,12 +27,12 @@ function comprovarContrassenya($contr1, $contr2){
     }
 }
 /**
- * validarContrassenya - Funció que comprova si la contrassenya és vàlida
+ * validarContrasenya - Funció que comprova si la contrasenya és vàlida
  *
  * @param  mixed $contr1
  * @return boolean true si la contrassenya és vàlida, false si no
  */
-function validarContrassenya($contr1){
+function validarContrasenya($contr1){
     $reg = "/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/";
     if (preg_match($reg, $contr1)) {
         return true;
@@ -78,11 +78,11 @@ function existeixUsuari($user){
 }
 
 if (isset($_POST['signup_submit'])) {
-    if (!comprovarContrassenya($contr1, $contr2)) {
-        $errors[] = "Les contrassenyes no coincideixen";
+    if (!comprovarContrasenya($contr1, $contr2)) {
+        $errors[] = "Les contrasenyes no coincideixen";
     }
-    if (!validarContrassenya($contr1)) {
-        $errors[] = "La contrassenya ha de tenir almenys 8 caràcters, una majúscula, una minúscula, un número i un caràcter especial";
+    if (!validarContrasenya($contr1)) {
+        $errors[] = "La contrasenya ha de tenir almenys 8 caràcters, una majúscula, una minúscula, un número i un caràcter especial";
     }
     if (!comprovarUsuari($user)) {
         $errors[] = "L'usuari ha de tenir més de 5 caràcters";
@@ -93,8 +93,8 @@ if (isset($_POST['signup_submit'])) {
 
     if (empty($errors)) {
         require_once '../Model/register.php';
-        $contassenya = password_hash($contr1, PASSWORD_DEFAULT);
-        afegirUsuari($user, $contassenya);
+        $contasenya = password_hash($contr1, PASSWORD_DEFAULT);
+        afegirUsuari($user, $contasenya);
         echo '<script>alert("Usuari registrat! Ja pots iniciar sessió!");</script>';
         header("refresh:0.01, url=../Model/login.php");
     }}

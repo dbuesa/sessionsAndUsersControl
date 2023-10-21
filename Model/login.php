@@ -17,7 +17,7 @@ if(isset($_POST["Entrar"])){
  * @return void
  */
 function loginUsuari($user, $contrassenya){
-require 'connexio.php';
+require_once 'connexio.php';
 try{
     $stmt = $conn->prepare("SELECT * FROM usuaris WHERE username = ?");
     $stmt->bindParam(1, $user);
@@ -37,7 +37,7 @@ try{
 }catch(PDOException $e){
     echo "Error: " . $e->getMessage();
 }
-include '../Vista/login.vista.php';
+include_once '../Vista/login.vista.php';
 }
 
 

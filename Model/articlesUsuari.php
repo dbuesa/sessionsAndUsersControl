@@ -34,7 +34,7 @@ function llistarArticlesUsuari($limit, $offset){
 
 function obtenirUsuariId(){
     require "connexio.php";
-
+    
     $stmt = $conn->prepare("SELECT usuari_id FROM usuaris WHERE username = ?");
     $stmt->execute([$_SESSION['username']]);
     $usuari_id = $stmt->fetch(PDO::FETCH_OBJ);

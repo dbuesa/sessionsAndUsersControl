@@ -32,6 +32,10 @@ function llistarArticlesUsuari($limit, $offset){
 }
 
 
+/**
+ * obtenirUsuariId - Funció que retorna l'id de l'usuari actual en sessió
+ * @return $usuari_id id de l'usuari actual
+ */
 function obtenirUsuariId(){
     require "connexio.php";
     

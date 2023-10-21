@@ -1,4 +1,5 @@
 <?php 
+//David Buesa
 
 /**
  * netejarData - Funció que neteja les dades que li arriben per paràmetr

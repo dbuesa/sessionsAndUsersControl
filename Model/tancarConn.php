@@ -1,5 +1,5 @@
 <?php
-
+//David Buesa
 
 session_start();
 session_destroy();

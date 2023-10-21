@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">  
 	<link rel="stylesheet" href="Estils/estils.css"> <!-- feu referència al vostre fitxer d'estils -->
-	<title>Paginació</title>
+	<title>Usuari</title>
 </head>
 <body>
 	<header>
@@ -19,13 +19,20 @@
 
 	<div class="contenidor">
 		<h1>Articles</h1>
+		<div class="button-container">
+			<form action="Controlador/controlarAccionsUsuaris.php" method="POST">
+				<input class="green-button" type="submit" name="crear" value="Afegir article">
+				<input class="green-button" type="submit" name="editar" value="Editar article">
+				<input class="green-button" type="submit" name="eliminar" value="Eliminar article">
+			</form>
+		</div>
 		<section class="articles"> <!--aqui guardem els articles-->
 			<?php echo $list ?>
 		</section>
 
 		<form method="get" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
 			<select name="opcions" id="opcions" onchange="this.form.submit()">
-				<option value="1" <?php if ($articlesPerPagina == 1) echo "selected"; ?>></option>
+				<option value="5" <?php if ($articlesPerPagina == 5) echo "selected"; ?>></option>
 				<option value="5" <?php if ($articlesPerPagina == 5) echo "selected"; ?>>5</option>
 				<option value="8" <?php if ($articlesPerPagina == 8) echo "selected"; ?>>8</option>
 				<option value="10" <?php if ($articlesPerPagina == 10) echo "selected"; ?>>10</option>

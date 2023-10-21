@@ -30,6 +30,7 @@
 
 		<form method="get" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
 			<select name="opcions" id="opcions" onchange="this.form.submit()">
+				<option value="5" <?php if ($articlesPerPagina == 5) echo "selected"; ?>></option>
 				<option value="5" <?php if ($articlesPerPagina == 5) echo "selected"; ?>>5</option>
 				<option value="8" <?php if ($articlesPerPagina == 8) echo "selected"; ?>>8</option>
 				<option value="10" <?php if ($articlesPerPagina == 10) echo "selected"; ?>>10</option>

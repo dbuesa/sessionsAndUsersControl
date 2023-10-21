@@ -26,7 +26,7 @@ if(!isset($_SESSION['username'])){
     $list = "<ul>";
 
     foreach ($articles as $article) {
-        $list .= "<li>{$article->descripcio}</li>";
+        $list .= "<li>{$article->article_id} - {$article->descripcio}</li>";
     }
     $list .= "</ul>";
 

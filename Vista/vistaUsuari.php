@@ -23,6 +23,15 @@
 			<?php echo $list ?>
 		</section>
 
+		<form method="get" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
+			<select name="opcions" id="opcions" onchange="this.form.submit()">
+				<option value="1" <?php if ($articlesPerPagina == 1) echo "selected"; ?>></option>
+				<option value="5" <?php if ($articlesPerPagina == 5) echo "selected"; ?>>5</option>
+				<option value="8" <?php if ($articlesPerPagina == 8) echo "selected"; ?>>8</option>
+				<option value="10" <?php if ($articlesPerPagina == 10) echo "selected"; ?>>10</option>
+				<option value="15" <?php if ($articlesPerPagina == 15) echo "selected"; ?>>15</option>
+			</select>
+		</form>
 		<section class="paginacio">
 			<ul>
 				<?php if ($pagina > 1) : ?>

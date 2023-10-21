@@ -10,7 +10,7 @@ function articles(){
         $_SESSION['articlesPerPagina'] = $_GET['opcions']; 
     } else {
        
-        $_SESSION['articlesPerPagina'] = isset($_SESSION['articlesPerPagina']) ? $_SESSION['articlesPerPagina'] : 10;
+        $_SESSION['articlesPerPagina'] = isset($_SESSION['articlesPerPagina']) ? $_SESSION['articlesPerPagina'] : 5;
     }
     return $_SESSION['articlesPerPagina'];
 }
@@ -19,13 +19,13 @@ function articles(){
  * Funció que retorna els articles de l'usuari actual
  * @return articles articles de l'usuari actual
  */
-function llistarArticlesUsuari(){
+function llistarArticlesUsuari($limit, $offset){
     require "connexio.php";
 
     $usuari_id = obtenirUsuariId();
     $usuari_id = $usuari_id->usuari_id;
-    $stmt = $conn->prepare("SELECT * FROM articles WHERE usuari_id = ?");
-    $stmt->execute([$usuari_id]);
+    $stmt = $conn->prepare("SELECT * FROM articles WHERE usuari_id = ? LIMIT ? OFFSET ?");
+    $stmt->execute([$usuari_id, $limit, $offset]);
     $articles = $stmt->fetchAll(PDO::FETCH_OBJ);
 
     return $articles;
@@ -49,9 +49,10 @@ function obtenirUsuariId(){
  */
 function contarPagines($articlesPerPagina){
     require "connexio.php";
-    $stmt = $conn->query("SELECT count(*) AS count FROM articles");
-    $count = $stmt->fetchObject()->count;
 
+    $usuari_id = obtenirUsuariId();
+    $stmt = $conn->query("SELECT count(*) AS count FROM articles WHERE usuari_id = $usuari_id->usuari_id");
+    $count = $stmt->fetchObject()->count;
     $pagines = ceil($count / $articlesPerPagina);
 
     return $pagines;

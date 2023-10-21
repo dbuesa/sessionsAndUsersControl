@@ -73,6 +73,9 @@ function editarArticle($article_id, $usuari_id, $descripcio){
     $stmt = $conn->prepare("UPDATE articles SET descripcio = ? WHERE article_id = ? AND usuari_id = ?");
     $stmt->execute([$descripcio, $article_id, $usuari_id]);
 
+    echo '<script>alert("Article editat!");</script>';
+    header("refresh:0.01, url=../index.php");
+
 
 }
 

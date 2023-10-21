@@ -7,7 +7,6 @@ $errors = array();
 $errors2 = array();
 
 
-
 if (isset($_POST['crear'])){
     include "../Vista/crearArticle.vista.php";
 } else if (isset($_POST['afegirArticle'])) {
@@ -32,7 +31,6 @@ if (isset($_POST['crear'])){
 
 
 
-$article_id = null; 
 
 if (isset($_POST['editar'])) {
     include "../Vista/editarArticle.vista.php";
@@ -57,14 +55,15 @@ if (isset($_POST['editar'])) {
             include "../Vista/editarArticle.vista.php";
         }
     }
-} else if (isset($_POST['editarArticle'])) {
+} else if (isset($_POST['editarArticle']) && !empty($_POST['id'])) {
     if (empty($_POST['modificacio'])) {
         $errors2[] = "No pots afegir un article buit!";
         include "../Vista/editarArticle.vista.php";
-    } else if (!empty($_POST['modificacio']) && !empty($_POST['id'])) {
+    } else if (!empty($_POST['modificacio'])) {
         include "../Model/utils.php";
         include "../Model/articlesUsuari.php";
 
+        $article_id = netejarData($_POST['id']);
         $usuari_id = $_SESSION['username'];
         $usuari_id = obtenirUsuariId($usuari_id)->usuari_id;
         $descripcio = netejarData($_POST['modificacio']);
